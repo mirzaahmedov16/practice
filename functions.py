@@ -48,3 +48,33 @@ print("result3:", result3)
 
 result4 = give_greet(name="Neo")
 print("result4:", result4)
+
+
+print(" ===== Scope =====")
+'''
+# DEFINE
+b = 100
+
+
+def calculate(a, b):
+    c = a * b
+    print("the c value:", c)
+
+
+# CALL
+
+calculate(74, 42)
+'''
+
+# DEFINE
+b = 100
+
+
+def calculate(a):
+    c = a * b
+    print("the c value:", c)
+
+
+# CALL
+
+calculate(24)
