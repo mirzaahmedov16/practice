@@ -46,11 +46,42 @@ person1.introduce()
 person2.say_age()
 
 
-print("===== ordinary vs static properties =====")
+class Car():
+    # state
+    description = "This class makes cars"
 
-# static state
-new_message = Person.message
-print("new_message:", new_message)
+    # constructor
+    def __new__(cls, *args):
+        print("* __new__ *")
+        return super().__new__(cls)
 
-# class method
-Person.explain()
+    def __init__(self, name, year):
+        self.name = name
+        self.year = year
+
+    # method
+    def start_engine(self):
+        print(f"the {self.name} started engine!")
+
+    def stop_engine(self):
+        print(f"the {self.name} stopped engine!")
+
+    def __str__(self):
+        return f"{self.name} was produced in {self.year} year!"
+
+    def __call__(self):
+        print("Object called as function!")
+        return True
+
+
+my_car = Car("Ferrari", 2025)
+my_car.start_engine()
+my_car.stop_engine()
+
+print("-----")
+
+your_car = Car("Tayota", 2026)
+print(your_car)
+
+response = your_car()  # CALL
+print("response:", response)
