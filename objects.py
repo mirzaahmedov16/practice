@@ -32,17 +32,16 @@ print("==== Error handling system =====")
 
 car_dict = dict(name="Tayota", year=2026, electric=True)
 
-print("passed here")
-
 
 try:
+    print("passed here")
     result = car_dict["origin"]
     a = car_dict.speed
     print("result:", result)
 
 
 except KeyError as err:
-    print("No speed found:", err)
+    print("General Error:", err)
 
 else:
     print("Executed successfully without errors")
